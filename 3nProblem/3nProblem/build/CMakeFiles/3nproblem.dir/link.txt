@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/3nproblem.dir/main.o  -o 3nproblem -rdynamic 
