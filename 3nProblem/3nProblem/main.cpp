@@ -7,8 +7,9 @@ int iterationsToreachOne(unsigned long number);
 
 int main() {   
     unsigned long x, y;
-    cin >> x >> y;
     
+    while (cin >> x >> y) {
+  
     bool swaped = false;
     if (x > y) {
       x = x ^ y;
@@ -29,6 +30,8 @@ int main() {
     cout << y <<' '<< x <<' '<<  mostIterations << endl;
   else
     cout << x <<' '<< y <<' '<<  mostIterations << endl;
+    
+  }
     
   return 0;
 }
