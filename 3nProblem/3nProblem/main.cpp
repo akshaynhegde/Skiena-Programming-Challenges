@@ -2,17 +2,23 @@
 #include <stdlib.h>
 using namespace std;
 
-bool isEven(int number);
-int iterationsToreachOne(int number);
+bool isEven(unsigned long number);
+int iterationsToreachOne(unsigned long number);
 
 int main(int argc, char **argv) {   
-    int x, y;
+    unsigned long x, y;
     
     if (argc > 2) {
-      x = atoi(argv[1]);
-      y = atoi(argv[2]);
+      x = atol(argv[1]);
+      y = atol(argv[2]);
     }
     
+    if (x > y) {
+      x = x ^ y;
+      y = x ^ y;
+      x = x ^ y;
+    }
+   
     int mostIterations = 0;
     for (int i=x;i <= y;i++) {
       int iterations = iterationsToreachOne(i);
@@ -24,7 +30,7 @@ int main(int argc, char **argv) {
   return 0;
 }
 
-int iterationsToreachOne(int number) {
+int iterationsToreachOne(unsigned long number) {
      int count = 0;
       while (number != 1) {
 	if (isEven(number)) {
@@ -40,7 +46,7 @@ int iterationsToreachOne(int number) {
     return count+1;
 }
 
-bool isEven(int number) {
+bool isEven(unsigned long number) {
   if (!(number % 2))
     return true;
   else 
