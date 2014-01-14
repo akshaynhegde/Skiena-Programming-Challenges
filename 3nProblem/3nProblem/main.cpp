@@ -5,33 +5,40 @@ using namespace std;
 bool isEven(unsigned long number);
 int iterationsToreachOne(unsigned long number);
 
-int main(int argc, char **argv) {   
+int main() {   
     unsigned long x, y;
+    cin >> x >> y;
     
-    if (argc > 2) {
-      x = atol(argv[1]);
-      y = atol(argv[2]);
-    }
-    
+    bool swaped = false;
     if (x > y) {
       x = x ^ y;
       y = x ^ y;
       x = x ^ y;
+      swaped = true;
     }
    
     int mostIterations = 0;
+   
     for (int i=x;i <= y;i++) {
       int iterations = iterationsToreachOne(i);
     if (iterations > mostIterations)
       mostIterations = iterations;
   }
   
-  cout << x << " " << y << " " <<  mostIterations;
+  if (swaped)
+    cout << y <<' '<< x <<' '<<  mostIterations << endl;
+  else
+    cout << x <<' '<< y <<' '<<  mostIterations << endl;
+    
   return 0;
 }
 
 int iterationsToreachOne(unsigned long number) {
-     int count = 0;
+     int count = 1;
+     
+     if (!number)
+       return 0;
+       
       while (number != 1) {
 	if (isEven(number)) {
 	  //do n/2
@@ -43,7 +50,7 @@ int iterationsToreachOne(unsigned long number) {
       }
       count++;
     }
-    return count+1;
+    return count;
 }
 
 bool isEven(unsigned long number) {
