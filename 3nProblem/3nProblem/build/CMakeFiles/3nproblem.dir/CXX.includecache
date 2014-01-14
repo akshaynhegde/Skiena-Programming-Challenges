@@ -9,4 +9,6 @@
 /home/akshay/projects/Skiena-Programming-Challenges/3nProblem/3nProblem/main.cpp
 iostream
 -
+stdlib.h
+-
 
