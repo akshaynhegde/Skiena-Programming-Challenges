@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/minesweeper.dir/main.o  -o minesweeper -rdynamic 

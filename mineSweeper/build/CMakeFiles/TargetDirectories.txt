@@ -1,0 +1,1 @@
+/home/akshay/projects/Skiena-Programming-Challenges/mineSweeper/build/CMakeFiles/minesweeper.dir
